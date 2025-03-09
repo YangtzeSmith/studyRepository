@@ -11,3 +11,15 @@ void element
 attribute
 <element attribute="value"></element>
 boolean attribute
+
+<div></div>
+
+.class {
+
+}
+
+#id {
+
+}
+
+HTML entity
