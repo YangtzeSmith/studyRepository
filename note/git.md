@@ -62,6 +62,8 @@ git difftool        调用图形化软件分析
 #### git reset  HEAD -- <file>         取消暂存 file
 #### git checkout
 -- <file>                           用最近一次的提交代替本地版本
+<branch>                            切换到 branch分支
+-b <newBranchName>                  创建新分支并切换
 #### git remote                     列出你指定的所有远程仓库的简写
 -v                                  显示需要读写远程仓库使用的git保存的简写和url
 
@@ -69,7 +71,21 @@ add <shortname> <url>               添加新的远程仓库(url)，并指定 �
 show <remote>                       显示更多的远程仓库信息
 rename <oldName> <newName>
 remove <remote> | rm <remote>
+<snapshot>                          将 HEAD 指针指向 快照
+
 #### git fetch <remote>             抓取远程仓库，下载本地仓库没有的数据
 #### git push <remote> <branch>     将 branch分支 推送到 远程仓库
 #### git tag
 #### git show 
+
+#### git branch
+-d <branchname>                     删除分支
+-D <branchName>                     强制删除分支
+--merged                            查看已经合并的分支
+--no-merged                         查看未合并的分支
+
+<branchName>                        创建新分支
+<brch1> <brch2>                     将分支改名
+
+#### git merge                      合并分支
+#### git rebase <branch>            在branch分支下建立 新的快照
