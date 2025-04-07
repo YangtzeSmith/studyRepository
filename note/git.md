@@ -75,6 +75,8 @@ remove <remote> | rm <remote>
 
 #### git fetch <remote>             抓取远程仓库，下载本地仓库没有的数据
 #### git push <remote> <branch>     将 branch分支 推送到 远程仓库
+-u | --set-upstream                 设置
+
 #### git tag
 #### git show 
 
@@ -89,3 +91,5 @@ remove <remote> | rm <remote>
 
 #### git merge                      合并分支
 #### git rebase <branch>            在branch分支下建立 新的快照
+#### git pull
+--rebase                            
