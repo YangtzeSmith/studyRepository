@@ -442,3 +442,14 @@ for (let value of set)
 set.forEach((value, valueAgain, set) => {
 
 })
+
+
+## Class
+
+class MyClass {
+    constructor() {}
+    method1()
+    method2()
+    ...
+    methodN()
+}
