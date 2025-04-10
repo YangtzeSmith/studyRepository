@@ -72,7 +72,15 @@ string is immutable
 
 str.length
 str[pos]    // start from 0
-
+str.includes(substring);
+str.startwith(substring);
+str.endwith(substring);
+str.indexOf(substring, [pos]);
+str.slice(start, [end]);
+str.toLowerCase();
+str.toUpperCase();
+str.replace(subtring, destString);
+str.replaceAll(subtring, destString);
 
 String(value)
 
@@ -95,6 +103,20 @@ let obj = new Object();
 
 obj.prop
 obj[prop]
+
+## Arrays
+let arr = [];
+
+arr[index]    // index >= 0
+
+arr.length;
+arr.indexOf(value);
+arr.splice(index, num);
+
+arr.push(value);
+arr.pop();
+arr.unshift(value);
+arr.shift();
 
 
 ## Conditionals

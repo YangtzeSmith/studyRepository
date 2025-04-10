@@ -17,18 +17,24 @@ case-sensitive
 Comment     //  /* */
 JS is a dynamically typed language.
 
-使用**d"use strict";**启动严格模式
+使用 "use strict" 启动严格模式
 
 console.log( message );     输出到控制台
 
-### Test
+~n = -(n + 1)
+
+**alert(message)**
+**result = prompt(displayText, [defaultValue])**
+**confirm(question)**
+
+## Test
 使用**Mocha**进行自动化测试
 
 Mocha —— 核心框架：提供了包括通用型测试函数 describe 和 it，以及用于运行测试的主函数。
 Chai —— 提供很多断言（assertion）支持的库。它提供了很多不同的断言，现在我们只需要用 assert.equal。
 Sinon —— 用于监视函数、模拟内建函数和其他函数的库，我们在后面才会用到它。
 
-#### specification
+### specification
 describe('title', function() {
 
     it('use case description', function() {
@@ -36,24 +42,15 @@ describe('title', function() {
     });
 })
 
-### Interaction
-**alert(message)**
 
-**result = prompt(displayText, [defaultValue])**
-
-**confirm(question)**
-
-### variable and types
-
-~n = -(n + 1)
-
+## variable and types
+typeof x | typeof(x)    以字符串形式返回x的数据类型
 **declaration**
 var a1;
 let a2;
 const CONSTENT;
 
-**原始数据类型**
-#### Number
+### Number
 **value**: integer, float, Infinity, -Infinity, NaN
 
 **进制**
@@ -76,9 +73,6 @@ isNaN(value)
 parseInt(str, radix)
 parseFloat(str)
 
-#### BigInt
-let bigInt = 1111111111111111111111111n;
-尾部的 "n" 表示这是一个 BigInt 类型
 #### String
 "Hello"
 'Hello'
@@ -101,13 +95,10 @@ str.endwith(substr)
 str.slice(start, end)
 str.substring(start, end)
 str.substr(start, length)
-
-
-#### Boolean
-**value**: true, false;
-#### null
-#### undefined
-#### Symbol
+### Boolean
+### null
+### undefined
+### Symbol (2015)
 symbol 是 带有 可选描述 的 “原始唯一值”，不会被自动转换
 
 let varb = Symbol("description");
@@ -118,11 +109,9 @@ varb.description        // description
 全局的一个Symbol注册表
 let symbol = Symbol.for("description");
 let description = Symbol.keyFor(symbol);
-
-**引用类型**
-#### Object
-
-typeof x | typeof(x)    以字符串形式返回x的数据类型
+### BigInt (2020)
+let bigInt = ...........n;
+### Object
 
 **对象包装器**
 String()
@@ -130,50 +119,8 @@ Number()
 Boolean()
 创建临时对象进行帮助    
 
-### Type conversion
-String(value);
-Number(value); | +value;
-Boolean(value); | !!value;
 
-### Arrays
-
-**Arrays in Javascript is sparse**
-var myArray = [];
-myArray[88] = 3;
-myArray[0...87] == undefined;    myArray[88] == 3;
-
-#### definition
-var myArray = [1, 2, 3];
-var theSameArray = new Array(1, 2, 3);
-
-#### access
-myArray[0]      the first element in the array
-
-#### misc
-##### splicing
-objArray = array.splice(pos, len);
-var arr = [0,1,2,3,4,5,6,7,8,9];
-var splice = arr.splice(3, 5);
-splice      // 3, 4, 5, 6, 7
-arr         // 0, 1, 2, 8, 9
-
-#### array work like stack
-var arrStack = [];
-arrStack.push(1);
-arrStack.push(2);
-
-console.log(arr.pop());
-
-#### array work like queue
-var arrQueue = [];
-arrQueue.push(1);   // 1
-arrQueue.push(2);   // 1, 2
-arrQueue.unshift(0);// 0, 1, 2
-
-arrQueue.shift();   // 1, 2
-
-
-### Operators and Mathematics
+## Operators and Mathematics
 1. + | +=
 2. - | -=
 3. / | /=
@@ -193,33 +140,34 @@ arrQueue.shift();   // 1, 2
 17. > | >= | < | <= | == | !=
 18. ===     严格比较符号
 
-### Condition
+## Conditionals
 
-**if**
 if (condition) {
-    conduct;
+    statements;
 } else if (condition2) {
-
+    statements;
 } else {
-
+    statements;
 }
 
-**?**   
 let result = condition ? value1 : value2;
 
-**switch**
 switch(x) {
-    case 'value1':
-        ...
-        [break]
-    case 'value2':
-        ...
-        [break]
+    case label1:
+        statments;
+        break;
+    case label2:
+        statments;
+        break;
+    // ...
+    case labelN:
+        statements;
+        break;
     default:
-        ...
+        statements;
 }
 
-### Circle
+## Loops
 **for**
 for(...;...;...)
 for(key in object) {object[key]}
@@ -237,7 +185,7 @@ label: {
 }
 **continue**
 
-### function    
+## function    
 函数 是 一种 特殊的 值
 
 **回调函数：**将函数作为 值 传递
@@ -259,16 +207,14 @@ let func = (arg1, arg2, ..., argN) => {
     return result;
 }
 
-### Object
+## Object
 
 __proto__
 
-#### declaration
 let user = new Object();
 let user = {};
 
 compute = .....
-
 let user = {
     name: "John",
     age: 30,
@@ -276,15 +222,13 @@ let user = {
     [compute]: 5,
 };
 
-#### access
 obj.prop
 obj["property"]
 
-#### copy
 Object.assign(destObj, [src1, src2, src3, ...])     浅拷贝
 destObj = _.cloneDeep(obj)
 
-#### others
+### others
 delete obj.prop
 "key" **in** obj  // 检测对象中是否有该属性
 for (let key in obj)
@@ -296,7 +240,7 @@ for (let key in obj)
     // ...
 }
 
-#### Object Functions
+### Object Functions
 user = {
     func: function() {
         ...
@@ -321,7 +265,7 @@ new User(...) == function User(...) {
                     return this;
                 }
 
-#### ?. ?.() ?.[] 可选链
+### ?. ?.() ?.[] 可选链
 访问嵌套对象属性的一种安全的方式
 
 **三种语法**
@@ -336,13 +280,54 @@ Object.keys(obj)
 Object.values(obj)
 Object.entries(obj)    返回数组
 
-### This
-没有对象调用时 this 值为 undefined
-箭头函数没有自身的 this
+### 属性标志 和 属性描述符
+let descriptor = Object.getOwnPropertyDescriptor(obj, propertyName);
 
-### Array
+{
+    "value":
+    "writable":
+    "enumerable":
+    "configurable":
+}
 
-**declaration**
+Object.defineProperty(obj, propertyName, descriptor);
+Object.defineProperties(obj,
+    prop1:descriptor1,
+    prop2:descriptor2
+    // ...
+);
+
+let clone = Object.defineProperties({}, Object.getOwnPropertyDescriptors(obj));
+
+### getter 和 setter
+let obj = {
+    get propName() {
+
+    },
+    set propName(value) {
+    }
+};
+
+obj.propName        // 访问器属性
+
+访问器属性描述符 没有 value 和 writable 属性，多出了 get 和 set 属性
+
+### 原型 、 继承
+object 具有一个 隐藏的特殊属性 [[Prototype]]，它指向另一个对象，称为原型对象。
+prototype 值为 null 或者 另一个对象的应用
+我们可以使用 obj.__proto__ 访问原型对象
+原型链可以很长，但是不能形成循环引用
+__proto__ 是 [[Prototype]] 的 getter/setter 方法
+
+obj.getPrototypeOf(obj);
+obj.setPrototypeOf(obj, proto);
+
+如果我们调用 obj.method()，而且 method 是从原型中获取的，this 仍然会引用 obj。因此，方法始终与当前对象一起使用，即使方法是继承的。
+for..in 循环在其自身和继承的属性上进行迭代
+
+
+## Array
+
 let arr = new Array();
 let arr = [];
 
@@ -444,12 +429,92 @@ set.forEach((value, valueAgain, set) => {
 })
 
 
+
+## JSON
+JSON.stringify(value [, replacer [, space]])
+JSON.parse(str [, reviver]) 
+
+函数属性、Symbol类型、存储undefined的属性 
+
+**自定义toJSON()方法**
+let obj = {
+    toJSON() {
+        return {...this};
+    }
+}；
+
+## Date
+let date = new Date(milliseconds);
+let date = new Date(dateString);
+let date = new Date(year, month [, day [, hours [, minutes [, seconds [, milliseconds]]]]]);
+
+date.getFullYear();
+date.getMonth();
+date.getDate();
+date.getDay();
+date.getHours();
+date.getMinutes();
+date.getSeconds();
+date.getMilliseconds();
+date.getTime();
+date.getTimezoneOffset();
+
+date.setFullYear(year [, month [, day]]);
+date.setMonth(month [, day]);
+date.setDate(day);
+date.setHours(hour [, min [, sec [, millisec]]]);
+date.setMinutes(min [, sec [, millisec]]);
+date.setSeconds(sec [, millisec]);
+date.setMilliseconds(millisec);
+
+Date.now();
+Date.parse(dateString);
+
 ## Class
+类 总是使用 'use strict'
 
 class MyClass {
-    constructor() {}
-    method1()
-    method2()
-    ...
-    methodN()
+  prop = value; // 属性
+
+  constructor(...) { // 构造器
+    // ...
+  }
+
+  method(...) {} // method
+
+  get something(...) {} // getter 方法
+  set something(...) {} // setter 方法
+
+  [Symbol.iterator]() {} // 有计算名称（computed name）的方法（此处为 symbol）
+  // ...
 }
+let Class = class {
+    ...
+};
+
+## Error Handling
+try {
+    // code that may throw an error
+} catch (error) {
+    // code to handle the error
+} finally {
+    // code to execute regardless of whether an error occurred or not
+}
+
+## Modules
+
+一个模块就是一个文件
+<script type="module" src="path/to/module.js"></script>
++ 默认是延迟解析的（deferred）。
++ Async 可用于内联脚本。
++ 要从另一个源（域/协议/端口）加载外部脚本，需要 CORS header。
++ 重复的外部脚本会被忽略
+
+浏览器环境 不允许 裸模块
+模块始终使用 use strict
+模块代码只执行一次。导出仅创建一次，然后会在导入之间共享
+
+
+
+**export**：标记可以从当前模块中导入的变量或函数
+**import**: 从其他模块导入变量或函数
