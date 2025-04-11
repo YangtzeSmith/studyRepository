@@ -73,7 +73,7 @@ isNaN(value)
 parseInt(str, radix)
 parseFloat(str)
 
-#### String
+### String
 "Hello"
 'Hello'
 `Hello` 反引号，功能扩展
@@ -280,7 +280,7 @@ Object.keys(obj)
 Object.values(obj)
 Object.entries(obj)    返回数组
 
-### 属性标志 和 属性描述符
+### 属性标志 和 属性描述符  
 let descriptor = Object.getOwnPropertyDescriptor(obj, propertyName);
 
 {
